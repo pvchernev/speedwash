@@ -35,10 +35,11 @@
       .sw-winter-dialog__close {
         position: absolute; z-index: 2; top: 10px; right: 10px;
         display: grid; place-items: center; width: 44px; height: 44px;
-        margin: 0; padding: 0 0 3px; border: 1px solid rgba(255,255,255,.25);
+        margin: 0; padding: 0; border: 1px solid rgba(255,255,255,.25);
         border-radius: 50%; background: rgba(0,0,0,.7); color: #fff;
-        font: 32px/1 Arial,sans-serif; cursor: pointer;
+        cursor: pointer;
       }
+      .sw-winter-dialog__close svg { display: block; width: 18px; height: 18px; }
       .sw-winter-dialog__close:hover { background: #000; }
       .sw-winter-dialog__close:focus-visible { outline: 2px solid #fff; outline-offset: -5px; }
       .sw-winter-dialog__error {
@@ -66,7 +67,7 @@
     const closeButton = document.createElement('button');
     closeButton.className = 'sw-winter-dialog__close';
     closeButton.type = 'button';
-    closeButton.textContent = '×';
+    closeButton.innerHTML = '<svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3 3l12 12M15 3L3 15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
     closeButton.setAttribute('aria-label', 'Закрыть видео');
     closeButton.addEventListener('click', closePlayer);
 
